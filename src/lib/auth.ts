@@ -8,6 +8,7 @@ export async function login(payload: LoginPayload): Promise<AuthResponse> {
   return data;
 }
 
+
 export async function register(payload: RegisterPayload): Promise<AuthResponse> {
   const { data } = await api.post<AuthResponse>("/auth/register", payload);
   localStorage.setItem("access_token", data.access_token);
